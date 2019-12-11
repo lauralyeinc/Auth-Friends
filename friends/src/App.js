@@ -8,11 +8,11 @@ import FriendList from "./components/FriendList";
 
 function App() {
   return (
-    <BrowserRouter>
+    
       <div className="App">
         <ul>
           <li>
-            <Link to="login"> Login </Link>
+            <Link to="/login"> Login </Link>
           </li>
           <li>
             <Link to="/protected"> Protected Page </Link> 
@@ -24,7 +24,7 @@ function App() {
           <Route component={Login} />
         </Switch>
       </div>
-    </BrowserRouter>
+   
   );
 }
 

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../axiosWithAuth";
 
+import FriendForm from "./FriendForm"; 
+
 const FriendList = () => {
     const [friends, setFriends] = useState([]); 
 
@@ -19,7 +21,7 @@ const FriendList = () => {
             <h2> Add New Friend </h2>
             <FriendForm /> 
             <h3> You have { friends.length} friends! </h3>
-            
+
         </div>
     )
 

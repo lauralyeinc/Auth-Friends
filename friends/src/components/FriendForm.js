@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axiosWithAuth from "../axiosWithAuth";
+import { axiosWithAuth } from "../axiosWithAuth";
 
 const FriendForm = () => {
     const [newFriend, setNewFriend] = useState({
@@ -55,9 +55,12 @@ const FriendForm = () => {
                     value={newFriend.email}
                     onChange={handleChange}
                     /> 
+                <button>
+                    Add New Friend! 
+                </button>
             </form>
         </div>
     )
 }
 
-export default FriendsForm; 
+export default FriendForm; 

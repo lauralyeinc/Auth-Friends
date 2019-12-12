@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import { axiosWithAuth } from "../axiosWithAuth";
 
 const Login = (props) => {
-    const  [creds, setCreds] = useState({username:'', password:''})
+    const  [creds, setCreds] = useState({})
     
-
+    console.log(creds);
     const handleChange = event => {
     setCreds({
         ...creds,
@@ -14,19 +14,19 @@ const Login = (props) => {
     })
     };
 
-    const handleSubmit = event => {
+    const handleSubmit = event => {      // login 
         event.preventDefault();
         axiosWithAuth() 
-            .post("/login", creds)
+            .post("http://localhost:5000/api/login", creds)
             .then(res => {
                 console.log("Login.js : Login: login: then: res", res.data);
-                localStorage.setItem("token", res.data.payload);
+                localStorage.setItem('token', res.data.payload);     //res.data.token or res.data.payload??  
                 props.history.push("/protected");
             })
             .catch( error => {
                 console.log("Login.js: Login: login: then: error.message", error)
             });
-            console.log(handleSubmit);
+            console.log(handleSubmit, "handleSubmit");
     };
 
     

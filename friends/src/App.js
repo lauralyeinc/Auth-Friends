@@ -24,7 +24,6 @@ function App() {
           <Route component={Login} />
         </Switch>
       </div>
-   
   );
 }
 
